@@ -176,7 +176,8 @@ Plug 'Shougo/vimproc.vim'
 
 Plug 'honza/vim-snippets'
 
-Plugin 'valloric/youcompleteme'
+Plug 'oinksoft/npm.vim'
+
 
 call plug#end()
 
@@ -200,10 +201,10 @@ set hidden
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
-"set softtabstop=2
+set softtabstop=2
 
 set encoding=utf-8
 set t_Co=256
