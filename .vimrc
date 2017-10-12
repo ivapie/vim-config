@@ -178,6 +178,13 @@ Plug 'honza/vim-snippets'
 
 Plug 'oinksoft/npm.vim'
 
+Plug 'majutsushi/tagbar'
+
+Plug 'hushicai/tagbar-javascript.vim'
+
+Plug 'universal-ctags/ctags'
+
+Plug 'carakan/new-railscasts-theme'
 
 call plug#end()
 
@@ -241,9 +248,10 @@ syntax on
 " let g:solarized_italic=1
 " let g:solarized_bold=1
 " let g:solarized_underline=1
-colorscheme monokai
+" colorscheme monokai
 " set background=dark
 
+colorscheme new-railscasts
 
 
 " Set sign column clear
@@ -264,6 +272,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let NERDTreeShowHidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nmap ,n :NERDTreeFind<CR>
+let NERDTreeShowBookmarks=1
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -322,8 +331,6 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-
 
 " Set GitGutter on!
 let g:gitgutter_enabled = 1
@@ -527,3 +534,13 @@ let g:jsx_ext_required = 0
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" TagBaiiiiiiiiiir
+" https://thomashunter.name/blog/installing-vim-tagbar-with-macvim-in-os-x/
+" let g:tagbrr_ctags_bin='/usr/local/Cellar/node/0.10.28/bin/esctags'
+autocmd VimEnter * TagbarToggle
+let g:tagbar_width=26
+" noremap <silent> <Leader>y :TagbarToggle
+nmap <F8> :TagbarToggle<CR>
+
+
